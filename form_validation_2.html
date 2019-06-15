@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form validation 2 exercise</title>
+	
+</head>
+<body>
+<h1>Student details</h1>
+<form>
+	<p><input type="text" id="Name" oninput="validateAlphabet(this);" placeholder="Enter Name"></p>		<!--DOM=get element by id!-->
+	<p><input type="number" id="Roll number" oninput="validateNumber(this);" placeholder="Enter Roll number"></p>				
+	<p><input type="email" id=" Email" oninput="validateEmail(this);" placeholder="Enter your email" >			</p>	
+	<p><input type="number" id="contact number" oninput="validateNumber(this);" placeholder="Enter Phone number"> </p>
+	<p><input type="date" id="date of birth" oninput="validateDate(this);" placeholder="dd-mm-yy"></p>
+	<p><input type="password" id="password" oninput="validatePassword(this);" placeholder="Enter password:only 6-20 characters"></p>
+	<p><input type="password" id="repassword" oninput="validatePassword(this);" placeholder="Enter password:only 6-20 characters"></p>
+	<button>Submit</button>
+	
+	</form>
+	</body>
+	<script type="number/javascript">
+	function validateNumber(x)
+	{
+		var val=x.value;
+		if(!val.match(^\d*$))				//parameter in the bracket is an expression that regulates only alphabets(small and big)
+		{
+			alert("only numbers allowed");			//website having similar regular expressions : regexlib.coms
+			return false;
+		}
+		
+		return true;
+	}
+	</script>
+	<script type="text/javascript">
+		function validateAlpahbet(x)
+	{
+		var val=x.value;
+		if(!val.match(/^[a-zA-Z\s]+$/))				//parameter in the bracket is an expression that regulates only alphabets(small and big)
+		{
+			alert("only aplahbet allowed");			//website having similar regular expressions : regexlib.coms
+			return false;
+		}
+		
+		return true;
+	}
+	</script>
+	
+	<script type="email/javascript">
+	function validateEmail(x)
+	{
+		var val=x.value;
+		if(!val.match(^\w+@[a-zA-Z_]+?\.[a-zA-Z]))				//parameter in the bracket is an expression that regulates only alphabets(small and big)
+		{
+			alert("Enter valid email");			//website having similar regular expressions : regexlib.coms
+			return false;
+		}
+		
+		return true;
+	}
+	</script>
+		<script type="date/javascript">
+	function validateDate(x)
+	{
+		var val=x.value;
+		if(!val.match(^\d{1,2}\/\d{1,2}/\d{4}$))				//parameter in the bracket is an expression that regulates only alphabets(small and big)
+		{
+			alert("only numbers allowed");			//website having similar regular expressions : regexlib.coms
+			return false;
+		}
+		
+		return true;
+	}
+	</script>
+	
+		<script type="password/javascript">
+	function validatePassword(x)
+	{
+		var val=x.value;
+		if(!val.match(^[a-zA-Z]\w{5,19}$))				//parameter in the bracket is an expression that regulates only alphabets(small and big)
+		{
+			alert("only aplahbet allowed");			//website having similar regular expressions : regexlib.coms
+			return false;
+		}
+		
+		return true;
+	}
+	</script>
+	</html>
